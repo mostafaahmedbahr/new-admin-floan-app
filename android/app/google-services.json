@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "832207406191",
+    "project_id": "flone-app",
+    "storage_bucket": "flone-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832207406191:android:5e4bc7046c3fff4ab1f99a",
+        "android_client_info": {
+          "package_name": "com.example.floan_app_for_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832207406191-kojfblm3v0tgun7129n0ujsb73482910.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.floan_app_for_admin",
+            "certificate_hash": "3df31f7e2111cc2bfef1eef050386d716d9fc08f"
+          }
+        },
+        {
+          "client_id": "832207406191-6er2hasc2lg63plnphppru5gu39kogii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtMl0KFo1ZuJULlIsMdREg1xWppqVswAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832207406191-6er2hasc2lg63plnphppru5gu39kogii.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "832207406191-gu7v3bdmju1a3rqnac1t5p4eaii2cnil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flonApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832207406191:android:23b7ceb3d7ec8a56b1f99a",
+        "android_client_info": {
+          "package_name": "com.example.flon_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832207406191-l70vbau10kq1napgqru6ds9e8ecbgsea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flon_app",
+            "certificate_hash": "3df31f7e2111cc2bfef1eef050386d716d9fc08f"
+          }
+        },
+        {
+          "client_id": "832207406191-6er2hasc2lg63plnphppru5gu39kogii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtMl0KFo1ZuJULlIsMdREg1xWppqVswAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832207406191-6er2hasc2lg63plnphppru5gu39kogii.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "832207406191-gu7v3bdmju1a3rqnac1t5p4eaii2cnil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flonApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

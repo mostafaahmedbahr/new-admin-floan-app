@@ -1,0 +1,61 @@
+abstract class AddNewProductsStates{}
+
+class AddNewProductInitState extends AddNewProductsStates{}
+
+class AddNewProductLoadingState extends AddNewProductsStates{}
+class AddNewProductSuccessState extends AddNewProductsStates{}
+class AddNewProductErrorState extends AddNewProductsStates{}
+
+class ChangeSelectTypeState  extends AddNewProductsStates{}
+class ChangeSelectTypeArState  extends AddNewProductsStates{}
+class ChangeSelectSortState extends AddNewProductsStates{}
+class ChangeSelectSortArState extends AddNewProductsStates{}
+
+class SelectSizeState extends AddNewProductsStates{}
+class ChangeOfferOrNotState extends AddNewProductsStates{}
+class SelectColorState extends AddNewProductsStates{}
+
+class SetImageProfileFromCamera extends AddNewProductsStates{}
+class SetImageProfileFromGallery extends AddNewProductsStates{}
+
+class LoadingUploadImage extends AddNewProductsStates{}
+
+class UploadLoadingState extends AddNewProductsStates{}
+class UploadSuccessState extends AddNewProductsStates{}
+
+class UploadImageErrorState1 extends AddNewProductsStates{}
+class UploadImageSuccessState1 extends AddNewProductsStates{}
+
+class UploadImageErrorState2 extends AddNewProductsStates{}
+class UploadImageSuccessState2 extends AddNewProductsStates{}
+
+class UploadImageErrorState3 extends AddNewProductsStates{}
+class UploadImageSuccessState3 extends AddNewProductsStates{}
+
+class UploadImageErrorState4 extends AddNewProductsStates{}
+class UploadImageSuccessState4 extends AddNewProductsStates{}
+
+class UploadImageErrorState5 extends AddNewProductsStates{}
+class UploadImageSuccessState5 extends AddNewProductsStates{}
+
+
+
+class UploadImageToFireStorageLoadingState1 extends AddNewProductsStates{}
+class UploadImageToFireStorageErrorState1 extends AddNewProductsStates{}
+class UploadImageToFireStorageSuccessState1 extends AddNewProductsStates{}
+
+class UploadImageToFireStorageLoadingState2 extends AddNewProductsStates{}
+class UploadImageToFireStorageErrorState2 extends AddNewProductsStates{}
+class UploadImageToFireStorageSuccessState2 extends AddNewProductsStates{}
+
+class UploadImageToFireStorageLoadingState3 extends AddNewProductsStates{}
+class UploadImageToFireStorageErrorState3 extends AddNewProductsStates{}
+class UploadImageToFireStorageSuccessState3 extends AddNewProductsStates{}
+
+class UploadImageToFireStorageLoadingState4 extends AddNewProductsStates{}
+class UploadImageToFireStorageErrorState4 extends AddNewProductsStates{}
+class UploadImageToFireStorageSuccessState4 extends AddNewProductsStates{}
+
+class UploadImageToFireStorageLoadingState5 extends AddNewProductsStates{}
+class UploadImageToFireStorageErrorState5 extends AddNewProductsStates{}
+class UploadImageToFireStorageSuccessState5 extends AddNewProductsStates{}

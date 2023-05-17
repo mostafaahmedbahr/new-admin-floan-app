@@ -1,0 +1,50 @@
+abstract class UpdateProductStates{}
+
+class UpdateInitState extends UpdateProductStates{}
+
+class UpdateProductLoadingState extends UpdateProductStates{}
+class UpdateProductSuccessState extends UpdateProductStates{}
+class UpdateProductErrorState extends UpdateProductStates{}
+
+class GetAllProductsLoadingState extends UpdateProductStates{}
+class GetAllProductsSuccessState extends UpdateProductStates{}
+class GetAllProductsErrorState extends UpdateProductStates{}
+
+class UploadImageSuccessState1  extends UpdateProductStates{}
+class UploadImageErrorState1  extends UpdateProductStates{}
+
+class UploadImageSuccessState2 extends UpdateProductStates{}
+class UploadImageErrorState2 extends UpdateProductStates{}
+
+class UploadImageSuccessState3 extends UpdateProductStates{}
+class UploadImageErrorState3 extends UpdateProductStates{}
+
+class UploadImageSuccessState4 extends UpdateProductStates{}
+class UploadImageErrorState4 extends UpdateProductStates{}
+
+class UploadImageSuccessState5 extends UpdateProductStates{}
+class UploadImageErrorState5 extends UpdateProductStates{}
+
+
+class UploadImageToFireStorageLoadingState3 extends UpdateProductStates{}
+class UploadImageToFireStorageSuccessState3 extends UpdateProductStates{}
+class UploadImageToFireStorageErrorState3 extends UpdateProductStates{}
+
+class UploadImageToFireStorageLoadingState4 extends UpdateProductStates{}
+class UploadImageToFireStorageSuccessState4 extends UpdateProductStates{}
+class UploadImageToFireStorageErrorState4 extends UpdateProductStates{}
+
+class UploadImageToFireStorageLoadingState5 extends UpdateProductStates{}
+class UploadImageToFireStorageSuccessState5 extends UpdateProductStates{}
+class UploadImageToFireStorageErrorState5 extends UpdateProductStates{}
+
+class UploadImageToFireStorageLoadingState2 extends UpdateProductStates{}
+class UploadImageToFireStorageSuccessState2 extends UpdateProductStates{}
+class UploadImageToFireStorageErrorState2 extends UpdateProductStates{}
+
+class UploadImageToFireStorageLoadingState1 extends UpdateProductStates{}
+class UploadImageToFireStorageSuccessState1 extends UpdateProductStates{}
+class UploadImageToFireStorageErrorState1 extends UpdateProductStates{}
+
+class ChangeSelectTypeState extends UpdateProductStates{}
+class ChangeSelectSortState extends UpdateProductStates{}
