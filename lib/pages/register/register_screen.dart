@@ -397,7 +397,7 @@ class SignUpScreen extends StatelessWidget {
                                     height: 10.0,
                                   ),
                                   ConditionalBuilder(
-                                    condition:  state is! GetLatLonLoadingState,
+                                    condition:  state is ! GetLatLonLoadingState  ,
                                     fallback: (context)=>const Center(
                                       child: CircularProgressIndicator(color: AppColors.mainColor,),
                                     ),
@@ -408,9 +408,9 @@ class SignUpScreen extends StatelessWidget {
                                             height: 50,
                                             onPressed: (){
                                               cubit.checkLocationEnabled();
-                                              if(state is CheckLocationEnabledState ){
-                                                cubit.getLatLong();
-                                              }
+                                              // if(state is CheckLocationEnabledState ){
+                                              //   cubit.getLatLong();
+                                              // }
                                             },
                                             btnText: const Text("Pick Your Location"),
                                             btnColor: AppColors.mainColor,

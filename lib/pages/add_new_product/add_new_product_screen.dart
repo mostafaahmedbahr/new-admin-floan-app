@@ -212,8 +212,12 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
                       height: 10,
                     ),
                     state is UploadImageToFireStorageSuccessState1 || state is UploadImageToFireStorageSuccessState2 || state is UploadImageToFireStorageSuccessState3
-                    || state is UploadImageToFireStorageSuccessState4 || state is UploadImageToFireStorageSuccessState5
-                        ? const Center(
+                    || state is UploadImageToFireStorageSuccessState4 || state is UploadImageToFireStorageSuccessState5 ||
+            state is ChangeSelectTypeState   ||
+            state is ChangeSelectTypeArState ||
+                        state is   ChangeSelectSortState ||
+                        state is ChangeSelectTypeArState
+            ? const Center(
                       child:  Icon(
                         Icons.check_circle,
                         color: Colors.green,

@@ -46,6 +46,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
       showLocationToast();
     }
     emit(CheckLocationEnabledState());
+    getLatLong();
   }
 
 

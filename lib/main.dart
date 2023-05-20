@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColors.mainColorBlack, //<-- SEE HERE
          ),
       debugShowCheckedModeBanner: false,
-      home:  uId=="" ?  LoginScreen() : const HomeScreen(),
+      home:  newUidNew=="" ?  LoginScreen() : const HomeScreen(),
       builder: (context, child) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, child!),
         maxWidth: 1200,
