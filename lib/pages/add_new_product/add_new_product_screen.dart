@@ -216,7 +216,7 @@ class _AddNewProductScreenState extends State<AddNewProductScreen> {
             state is ChangeSelectTypeState   ||
             state is ChangeSelectTypeArState ||
                         state is   ChangeSelectSortState ||
-                        state is ChangeSelectTypeArState
+                        state is ChangeSelectSortArState
             ? const Center(
                       child:  Icon(
                         Icons.check_circle,

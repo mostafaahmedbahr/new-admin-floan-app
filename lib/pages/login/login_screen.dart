@@ -33,6 +33,8 @@ class LoginScreen extends StatelessWidget {
           if(state is GetUserDataSuccessState){
             if(LoginCubit.get(context).allUsers[0]["isAdmin"]==true){
               newUidNew = SharedPreferencesHelper.getData(key: "uId");
+              print(newUidNew);
+              print("mostafa"*10);
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return const HomeScreen();
               }));

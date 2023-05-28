@@ -9,6 +9,7 @@ class AdminModel
   double? lat;
   double? long;
   String? shopName;
+  String? shopImage;
 
   AdminModel({
       this.adminName,
@@ -18,6 +19,7 @@ class AdminModel
     this.long,
     this.lat,
     this.shopName,
+    this.shopImage,
     this.isAdmin,
 
   });
@@ -32,6 +34,7 @@ class AdminModel
     lat = json["lat"];
     isAdmin = json["isAdmin"];
     long = json["long"];
+    shopImage = json["shopImage"];
   }
 
     Map<String,dynamic> toMap()
@@ -42,6 +45,7 @@ class AdminModel
         "phone" :adminPhone ,
          "email" : adminEmail,
         "name" : adminName,
+        "shopImage" : shopImage,
         "long" :long ,
         "lat" : lat,
         "shopName" :shopName ,

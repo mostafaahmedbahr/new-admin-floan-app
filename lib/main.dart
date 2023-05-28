@@ -18,10 +18,12 @@ void main() async {
   await SharedPreferencesHelper.init();
 
   uId = SharedPreferencesHelper.getData(key: "uId") ?? "";
+  newUidNew = SharedPreferencesHelper.getData(key: "uId") ?? "";
   shopName = SharedPreferencesHelper.getData(key: "shopName") ?? "";
   lat = SharedPreferencesHelper.getData(key: "lat") ?? 0.0;
   long = SharedPreferencesHelper.getData(key: "long") ?? 0.0;
   print(uId);
+  print(newUidNew);
   print(shopName);
   print(lat);
   print(long);
