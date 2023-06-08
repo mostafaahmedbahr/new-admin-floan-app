@@ -105,6 +105,7 @@ class SignUpScreen extends StatelessWidget {
                                         textColor: AppColors.mainColor,
                                         fontWeight: FontWeight.bold,
                                       ),
+                                      //8/6
                                       CustomText(
                                         text: "UP",
                                         fontSize: 50,
