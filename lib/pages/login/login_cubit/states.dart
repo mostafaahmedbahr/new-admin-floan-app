@@ -13,3 +13,7 @@ class LoginErrorState extends LoginStates{
   final String errorMsg;
   LoginErrorState({required  this.errorMsg});
 }
+
+class GetUserDataLoadingState extends LoginStates{}
+class GetUserDataSuccessState extends LoginStates{}
+class GetUserDataErrorState extends LoginStates{}

@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
 import '../../../../core/colors.dart';
+import '../../core/constants.dart';
 import '../../core/toast/toast.dart';
 import '../../core/toast/toast_states.dart';
 import '../../widgets/custom_sized_box.dart';
@@ -27,11 +28,23 @@ class LoginScreen extends StatelessWidget {
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {
           if(state is LoginSuccessState){
-
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return const HomeScreen();
-            }));
-
+            LoginCubit.get(context).getUserData();
+          }
+          if(state is GetUserDataSuccessState){
+            if(LoginCubit.get(context).allUsers[0]["isAdmin"]==true){
+              newUidNew = SharedPreferencesHelper.getData(key: "uId");
+              print(newUidNew);
+              print("mostafa"*10);
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return const HomeScreen();
+              }));
+            }
+            else{
+              ToastConfig.showToast(
+                msg: "this user not have access",
+                toastStates: ToastStates.Error,
+              );
+            }
           }
           if(state is LoginErrorState) {
             ToastConfig.showToast(

@@ -74,7 +74,7 @@ class UpdateProductScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10),
                                   child:cubit.allProducts[index]["images"]==null?
                                   Image.asset("assets/images/photo.png") :
-                                  Image.network("${cubit.allProducts[0]["images"][0]}",
+                                  Image.network("${cubit.allProducts[index]["images"][0]}",
                                     width: 100,
                                     fit: BoxFit.cover,
                                   ),

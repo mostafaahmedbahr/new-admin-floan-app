@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:floan_app_for_admin/Sh/shared_pref.dart';
 import 'package:floan_app_for_admin/pages/login/login_cubit/states.dart';
@@ -46,6 +47,30 @@ class LoginCubit extends Cubit<LoginStates> {
      });
 
    }
+
+
+  List  allUsers = [];
+  getUserData()
+  {
+    emit(GetUserDataLoadingState());
+    allUsers = [];
+    FirebaseFirestore.instance.collection("AllUsers")
+        .where("id" , isEqualTo: SharedPreferencesHelper.getData(key: "uId"))
+        .get().then((value)
+    {
+      for (var element in value.docs) {
+        allUsers.add(element );
+      }
+      debugPrint(allUsers.length.toString());
+      print(allUsers[0]["isAdmin"]);
+      debugPrint("6"*20);
+      emit(GetUserDataSuccessState());
+    }).catchError((error)
+    {
+      print("error in get all users data ${error.toString()}");
+      emit(GetUserDataErrorState());
+    });
+  }
 
 
 

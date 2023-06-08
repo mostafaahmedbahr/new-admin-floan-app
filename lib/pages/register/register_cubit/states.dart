@@ -25,3 +25,11 @@ class GetLatLonErrorState extends RegisterStates{}
 class GetLatLongSuccessState extends RegisterStates{}
 
 class CheckLocationEnabledState extends RegisterStates{}
+
+
+class UploadImageSuccessState1 extends RegisterStates{}
+class UploadImageErrorState1 extends RegisterStates{}
+
+class UploadImageToFireStorageLoadingState1 extends RegisterStates{}
+class UploadImageToFireStorageErrorState1 extends RegisterStates{}
+class UploadImageToFireStorageSuccessState1 extends RegisterStates{}

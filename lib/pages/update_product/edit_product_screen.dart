@@ -809,6 +809,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                                       "new_price" :cubit.newNewPrice?? widget.newPrice,
                                       "title" : cubit.selectType?? widget.type  ,
                                       "type_category" : cubit.selectSort ?? widget.title,
+                                      if( selectedSizes.isNotEmpty)
                                       "size" : selectedSizes,
                                        if(cubit.productImages.isNotEmpty)
                                       "images" :  cubit.productImages ,

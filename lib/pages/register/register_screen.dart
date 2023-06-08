@@ -2,11 +2,9 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:floan_app_for_admin/pages/home/home_screen.dart';
 import 'package:floan_app_for_admin/pages/register/register_cubit/states.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocoding/geocoding.dart';
-
 import '../../../../core/colors.dart';
 import '../../core/toast/toast.dart';
 import '../../core/toast/toast_states.dart';
@@ -22,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var formKey = GlobalKey<FormState>();
     return BlocProvider(
-      create: (context)=>RegisterCubit()  ,
+      create: (context)=>RegisterCubit(),
       child: BlocConsumer<RegisterCubit,RegisterStates>(
         listener: (context,state){
           if(state is CreateUserSuccessState){
@@ -89,13 +87,13 @@ class SignUpScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Image.asset("assets/images/newlogo.png",
-                                    width: 200,
-                                    height: 200,
-                                  ),
-                                  const SizedBox(
-                                    height: 15.0,
-                                  ),
+                                  // Image.asset("assets/images/newlogo.png",
+                                  //   width: 200,
+                                  //   height: 200,
+                                  // ),
+                                  // const SizedBox(
+                                  //   height: 15.0,
+                                  // ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: const [
@@ -121,6 +119,31 @@ class SignUpScreen extends StatelessWidget {
                                   const CustomText(text: "Sign with us to know more ...",
                                     fontSize: 20,
                                     textColor: Colors.grey,
+                                  ),
+                                  const SizedBox(
+                                    height: 10.0,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      cubit.getImage();
+                                    },
+                                    child: Container(
+                                      height: 150,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.mainColorBlack,
+                                        border: Border.all(
+                                          color: AppColors.mainColorWhite,
+                                        ),
+                                      ),
+                                      child: cubit.productImage1 == null
+                                          ? const Icon(
+                                        Icons.upload_rounded,
+                                        color: AppColors.mainColorWhite,
+                                        size: 40,
+                                      )
+                                          : Image.file(cubit.productImage1!,fit: BoxFit.cover,),
+                                    ),
                                   ),
                                   const SizedBox(
                                     height: 30.0,
@@ -398,7 +421,7 @@ class SignUpScreen extends StatelessWidget {
                                     height: 10.0,
                                   ),
                                   ConditionalBuilder(
-                                    condition:  state is! GetLatLonLoadingState,
+                                    condition:  state is ! GetLatLonLoadingState  ,
                                     fallback: (context)=>const Center(
                                       child: CircularProgressIndicator(color: AppColors.mainColor,),
                                     ),
@@ -409,9 +432,9 @@ class SignUpScreen extends StatelessWidget {
                                             height: 50,
                                             onPressed: (){
                                               cubit.checkLocationEnabled();
-                                              if(state is CheckLocationEnabledState ){
-                                                cubit.getLatLong();
-                                              }
+                                              // if(state is CheckLocationEnabledState ){
+                                              //   cubit.getLatLong();
+                                              // }
                                             },
                                             btnText: const Text("Pick Your Location"),
                                             btnColor: AppColors.mainColor,
@@ -433,6 +456,7 @@ class SignUpScreen extends StatelessWidget {
                                         onPressed: () async{
                                           if (formKey.currentState!.validate()){
                                             cubit.register(
+                                              shopImage : cubit.shopImageUrl1,
                                               name: cubit.nameCon.text,
                                               email: cubit.emailCon.text,
                                               password: cubit.passCon.text,

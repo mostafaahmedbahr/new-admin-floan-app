@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:floan_app_for_admin/models/admin_model.dart';
@@ -9,6 +11,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geocoding/geocoding.dart';
  import 'package:geolocator/geolocator.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 import '../../../Sh/shared_pref.dart';
 class RegisterCubit extends Cubit<RegisterStates> {
@@ -46,7 +50,59 @@ class RegisterCubit extends Cubit<RegisterStates> {
       showLocationToast();
     }
     emit(CheckLocationEnabledState());
+    getLatLong();
   }
+
+
+
+  File? productImage1;
+  var  picker1 = ImagePicker();
+
+  Future<void> getImage()async
+  {
+    final pickedFile = await picker1.pickImage(source: ImageSource.gallery);
+
+    if(pickedFile != null)
+    {
+      productImage1 = File(pickedFile.path);
+      emit(UploadImageSuccessState1());
+      uploadProductImage1();
+    }
+    else{
+      debugPrint("no image selected");
+      emit(UploadImageErrorState1());
+    }
+
+  }
+
+
+  String shopImageUrl1 = "";
+  void uploadProductImage1()
+  {
+    emit(UploadImageToFireStorageLoadingState1());
+    firebase_storage.FirebaseStorage.instance.ref()
+        .child("productsImages/${Uri.file(productImage1!.path).pathSegments.last}")
+        .putFile(productImage1!).then((value){
+      value.ref.getDownloadURL().then((value)
+      {
+        debugPrint(value);
+        shopImageUrl1 = value;
+        emit(UploadImageToFireStorageSuccessState1());
+        print("done 0.............");
+      }).catchError((error)
+      {
+        debugPrint("error in getDownloadURL ${error.toString()}");
+        emit(UploadImageToFireStorageErrorState1());
+      });
+
+    }).catchError((error)
+    {
+      debugPrint("error in uploadProductImage1 ${error.toString()}");
+      emit(UploadImageToFireStorageErrorState1());
+    });
+
+  }
+
 
 
   register({
@@ -57,6 +113,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
     required double lat,
     required double long,
     required String shopName,
+    required String shopImage,
   })async
   {
     emit(RegisterLoadingState());
@@ -68,6 +125,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
         print("0"*20);
         print(value.user!.email);
         createUser(
+          shopImage : shopImage,
           phone:phone ,
           email:email ,
           name: name,
@@ -76,6 +134,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
           long: long,
           shopName: shopName,
           isAdmin: true,
+
         );
         print("11111111111111111");
         SharedPreferencesHelper.saveData(
@@ -93,6 +152,10 @@ class RegisterCubit extends Cubit<RegisterStates> {
         SharedPreferencesHelper.saveData(
           key: "shopName",
           value: shopName,
+        );
+        SharedPreferencesHelper.saveData(
+          key: "shopImage",
+          value: shopImage,
         );
         // emit(RegisterSuccessState());
       }).catchError((error){
@@ -112,6 +175,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
     required double lat,
     required double long,
     required String shopName,
+    required String shopImage,
 })
   {
     AdminModel adminModel = AdminModel(
@@ -123,6 +187,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
       long: long,
       lat: lat,
         isAdmin : true,
+      shopImage: shopImage,
     );
     FirebaseFirestore.instance.collection("AllUsers").doc(adminId).set(adminModel.toMap()).then((value)
     {

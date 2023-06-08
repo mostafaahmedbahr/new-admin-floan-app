@@ -18,10 +18,12 @@ void main() async {
   await SharedPreferencesHelper.init();
 
   uId = SharedPreferencesHelper.getData(key: "uId") ?? "";
+  newUidNew = SharedPreferencesHelper.getData(key: "uId") ?? "";
   shopName = SharedPreferencesHelper.getData(key: "shopName") ?? "";
   lat = SharedPreferencesHelper.getData(key: "lat") ?? 0.0;
   long = SharedPreferencesHelper.getData(key: "long") ?? 0.0;
   print(uId);
+  print(newUidNew);
   print(shopName);
   print(lat);
   print(long);
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColors.mainColorBlack, //<-- SEE HERE
          ),
       debugShowCheckedModeBanner: false,
-      home:  uId=="" ?  LoginScreen() : const HomeScreen(),
+      home:  newUidNew=="" ?  LoginScreen() : const HomeScreen(),
       builder: (context, child) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, child!),
         maxWidth: 1200,
